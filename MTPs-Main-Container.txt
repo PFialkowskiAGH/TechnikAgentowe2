@@ -1,1 +1,1 @@
-http://Misaki:7778/acc
+http://Misaki.lan:7778/acc
