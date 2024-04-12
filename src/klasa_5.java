@@ -5,12 +5,8 @@ import java.util.Scanner;
 public class klasa_5 extends Agent {
     protected void setup() {
         System.out.println("startuję");
-
-        // Dodanie zachowania do pobierania liczby z klawiatury
         addBehaviour(new GetUserInputBehaviour());
     }
-
-    // Zachowanie do pobierania liczby z klawiatury
     private class GetUserInputBehaviour extends Behaviour {
         private boolean finished = false;
 
@@ -23,11 +19,12 @@ public class klasa_5 extends Agent {
                 // Jeśli użytkownik podał liczbę ujemną, zakończ zachowanie
                 System.out.println("Podano liczbę ujemną. Kończę zachowanie.");
                 finished = true;
+                // Usunięcie zachowania
+                myAgent.removeBehaviour(this);
             } else {
                 System.out.println("Podano liczbę: " + number);
             }
         }
-
         public boolean done() {
             return finished;
         }
